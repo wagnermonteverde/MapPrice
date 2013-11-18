@@ -78,7 +78,6 @@
 
 	<!-- Arquivo de inicialização do mapa -->
 	<script src="<c:url value='/resources/js/mapa.js'/>"></script>
-	<c:url value='/pontos'/>
 	
 	
 	
@@ -89,7 +88,7 @@
 	<script src="<c:url value='/resources/js/jquery.js'/>"></script>
 	<script src="<c:url value='/resources/js/bootstrap.js'/>"></script>
 	
-	 </div> <!-- /container -->
+	
 
 	
 	 <div class="navbar navbar-inverse navbar-fixed-bottom ">

@@ -35,9 +35,9 @@ public class TesteConfigure {
 		DAO<Promocao> dao = new DAO<Promocao>(Promocao.class);
 		
 		Promocao promocao = new Promocao();
-		promocao.setDescricao("Promoção da boa pode comprar que é bão");
+		promocao.setDescricao("Promocao da boa pode comprar que e bao");
 		promocao.setDiasDuracao(2);
-		promocao.setHint("Promoção Alimentos Confira");
+		promocao.setHint("Promocao Alimentos Confira");
 		promocao.setImagem("/price/resources/img/mapicons/vest.png");
 		promocao.setPreco(200.00);
         promocao.setLatitude("-24.0273973447393");
@@ -46,10 +46,10 @@ public class TesteConfigure {
         
         
         Promocao promocao1 = new Promocao();
-		promocao1.setDescricao("Promoção da boa pode comprar que é bão");
+		promocao1.setDescricao("Promocao da boa pode comprar que e bao");
 		promocao1.setDiasDuracao(2);
-		promocao1.setHint("Promoção Alimentos Confira");
-		promocao1.setImagem("/resources/img/mapicons/phones.png");
+		promocao1.setHint("Promocao Alimentos Confira");
+		promocao1.setImagem("/price/resources/img/mapicons/phones.png");
 		promocao1.setPreco(200.00);
 		promocao1.setLatitude("-24.027607300303135");
 		promocao1.setLongitude("-52.010970355169661");
@@ -57,9 +57,9 @@ public class TesteConfigure {
  
         
         Promocao promocao2 = new Promocao();
-		promocao2.setDescricao("Promoção da boa pode comprar que é bão");
+		promocao2.setDescricao("Promocao da boa pode comprar que e bao");
 		promocao2.setDiasDuracao(2);
-		promocao2.setHint("Promoção Alimentos Confira");
+		promocao2.setHint("Promocao Alimentos Confira");
 		promocao2.setImagem("/price/resources/img/mapicons/food.png");
 		promocao2.setPreco(200.00);
         promocao2.setLatitude("-24.0224136322735");
