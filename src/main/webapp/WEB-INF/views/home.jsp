@@ -34,6 +34,36 @@
 
 <body>
 
+
+<div id="fb-root"></div>
+	<script src="http://connect.facebook.net/en_US/all.js"></script>
+	<script>
+         FB.init({ 
+            appId: '298568550277158',          //ID da aplicação web definido no Facebook
+            cookie: true,                               // permitir cookies para poder acessar a sessão
+            status: true,                               // verificar o status do login
+            xfbml: false,                              // usar ou não tags do Facebook
+            oauth: true                                // autenticação via OAuth 2.0
+         });
+         
+         
+         
+         function loginWithFacebook(){
+             FB.login(function(response) {
+                if (response.authResponse) {
+                 // window.location.href = "http://localhost:8080/price/login?token="+response.authResponse.accessToken;
+                 self.location = "http://localhost:8080/price/login?token="+response.authResponse.accessToken;
+                } else {
+                  console.log('User cancelled login or did not fully authorize.');
+                }
+              }, {scope: 'email'});
+            }
+         
+      </script>
+
+
+
+
 	<!-- Side Menu -->
 	<a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i
 		class="icon-reorder"></i></a>
@@ -70,7 +100,7 @@
 			<h3 class="fundo">
 				<em>Encontre</em> o menor preço, <em>perto</em> de você!
 			</h3>
-			<a href="#intro" class="btn btn-warning btn-lg">Comece agora !</a>
+			 <a href="#intro" class="btn btn-warning btn-lg">Comece agora !</a>
 		</div>
 	</div>
 	<!-- /Full Page Image Header Area -->
@@ -94,8 +124,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4 text-center">
-					<a href="<c:url value='/mapaoferta'/>" class="btn btn-default btn-lg">Faça Login</a>
-					
+					<a href="javascript:loginWithFacebook();"
+						class="btn btn-default btn-lg">Faça Login</a>
+
 					<hr>
 				</div>
 			</div>

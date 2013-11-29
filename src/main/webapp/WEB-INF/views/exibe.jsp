@@ -11,8 +11,8 @@
 <meta name="author" content="">
 <link rel="shortcut icon"
 	href="<c:url value='/resources/css/img/favicon.png'/>">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:600"
-	type="text/css" rel="stylesheet" />
+<!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" -->
+<!-- 	type="text/css" rel="stylesheet" /> -->
 
 
 <script type="text/javascript"
@@ -54,44 +54,8 @@
 
 <body>
 
-	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/home">Melhor Preço</a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Inicio</a></li>
-					<li><a href="#about">Sobre</a></li>
-					<li><a href="#contact">Contato</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Nav header</li>
-							<li><a href="#">Separated link</a></li>
-							<li><a href="#">One more separated link</a></li>
-						</ul></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="../navbar/">Default</a></li>
-					<li><a href="../navbar-static-top/">Static top</a></li>
-					<li class="active"><a href="./">Fixed top</a></li>
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
-		</div>
-	</div>
+	
+	<c:import url="/resources/tiles/header.jsp"/>
 
 
 
@@ -126,8 +90,8 @@
 								class="icon-calendar"></i> Sept 16th, 2012 | <i
 								class="icon-comment"></i> <a href="#">3 Comments</a> | <i
 								class="icon-share"></i> <a href="#">39 Shares</a> | <i
-								class="icon-tags"></i> Tags : <a href="#"><span
-								class="label label-info">Snipp</span></a> <a href="#"><span
+								class="icon-tags"></i> Categoria : <a href="#"><span
+								class="label label-info">Eletronicos</span></a> <a href="#"><span
 								class="label label-info">Bootstrap</span></a> <a href="#"><span
 								class="label label-info">UI</span></a> <a href="#"><span
 								class="label label-info">growth</span></a>
@@ -140,25 +104,8 @@
 
 
 
+	<c:import url="/resources/tiles/footer.jsp"/>
 
-
-	<div class="navbar navbar-inverse navbar-fixed-bottom ">
-		<div class="navbar-inner">
-			<div class="container">
-				<form class="navbar-form pull-right" action="PesquisaProdutos?pag=1"
-					method="POST">
-					<input name="busca" type="search" required="Preencha o campo busca"
-						placeholder="Pesquise seu lanche!" class="span5" /> <input
-						class="btn-info" type="submit" value="Buscar">
-				</form>
-				<a class="brand" href="#"> </a>
-			</div>
-		</div>
-	</div>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-
+	
 </body>
 </html>
