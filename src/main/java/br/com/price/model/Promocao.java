@@ -11,19 +11,14 @@ import javax.persistence.OneToOne;
 @Entity
 public class Promocao{
 
-	
-	
-
-	/*
+	/**
+	 * 
 	 * 
 	 * Variaveis em amiusculo devido a bivlioteca Gjon e aplicação
 	 * javascript q precisa de variaveis com iniciais maiusculas :)
 	 * gambi :)
 	 * 
-	 */
-	
-	
-	/**
+	 * 
 	 * 
 	 */
 

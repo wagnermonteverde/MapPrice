@@ -25,7 +25,6 @@ public class TesteConfigure {
 		
 		user.setEmail("wagnermonteverde@hotmail.com");
 		user.setName("wagner");
-		user.setPassword("123");
 		
 		daoUser.adiciona(user);
 		

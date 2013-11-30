@@ -21,27 +21,26 @@ public class ControlerCadastroPreco {
 		ModelAndView mv;
 
 		if (latidude.equals("")) {
+			
 			mv = new ModelAndView("mapa");
 			mv.addObject("erro", "Preencha o Endereço Por Favor :(");
+			
 		} else {
+			
 			mv = new ModelAndView("formpreco");
 			mv.addObject("latitude", latidude);
 			mv.addObject("longitude", longitude);
 		}
+		
 		return mv;
 
 	}
 
 	@RequestMapping("/cadastrapreco")
 	public String cacastraPromocao(@ModelAttribute Promocao promocao) {
-
 		DAO<Promocao> daoPromocao = new DAO<Promocao>(Promocao.class);
-
 		promocao = PrePromotionPersist.adequapromocao(promocao);
-
 		daoPromocao.adiciona(promocao);
-
 		return "mapaoferta";
-
 	}
 }

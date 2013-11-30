@@ -23,13 +23,6 @@ public class ControlerLink {
 
 	@RequestMapping("/login")
 	public String mapa(@RequestParam("token") String token) {
-
-		System.out.println(token);
-
-		Facebook facebook = new FacebookTemplate(token);
-
-		ModelAndView mv = new ModelAndView("mapaoferta");
-
 		return "redirect:unico";
 	}
 
