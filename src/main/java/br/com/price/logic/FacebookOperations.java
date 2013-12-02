@@ -4,6 +4,8 @@ import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.FacebookLink;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 
+import br.com.price.model.User;
+
 /**
  * 
  * @author wagner
@@ -23,8 +25,8 @@ public class FacebookOperations {
 	 * 
 	 */
 
-	public void postStatusFacebook(String token, String status) {
-		facebook = new FacebookTemplate(token);
+	public void postStatusFacebook(User user, String status) {
+		facebook = new FacebookTemplate(user.getToken());
 		facebook.feedOperations().updateStatus(status);
 	}
 
@@ -33,9 +35,9 @@ public class FacebookOperations {
 	 * Metodo responável por postar link
 	 * 
 	 */
-	public void postLinkFacebook(String token, String linkString,
+	public void postLinkFacebook(User user, String linkString,
 			String description, String caption, String name) {
-		facebook = new FacebookTemplate(token);
+		facebook = new FacebookTemplate(user.getToken());
 		link = new FacebookLink(linkString, name, caption, description);
 		facebook.feedOperations().postLink(caption, link);
 	}
