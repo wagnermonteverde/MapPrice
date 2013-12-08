@@ -1,5 +1,8 @@
 package br.com.price.model;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -49,6 +52,8 @@ public class Promocao{
 	private String cidade;
 	
 	private String categoria;
+	
+	private  Calendar dataCadstro;
 
 	public long getId() {
 		return Id;
@@ -142,6 +147,19 @@ public class Promocao{
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+
+
+	public Calendar getDataCadstro() {
+		return dataCadstro;
+	}
+
+
+	public void setDataCadstro(Calendar dataCadstro) {
+		this.dataCadstro = dataCadstro;
+	}
+
+
+	
 
 	
 

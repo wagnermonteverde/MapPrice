@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <%@ page session="false"%>
 
 <!DOCTYPE html>
@@ -60,141 +62,81 @@
 	<br>
 	<br>
 	<br>
+ <span	class="label label-info">Lista de promoções para :</span>
+		<span class="label label-success">Descrição</span>
+
 	<div id="imgpos">
+	
+	
 
 		<hr>
-		
-		<c:forEach items="${lista}" var="promocao" >
-		
-		
-		<div class="row">
-			<div class="span2">
-				<a href="#" class="thumbnail"> <img
-					src="${promocao.imgDescricao}" alt="Eita isso é constrangedor :()">
-				</a>
-			</div>
-			<div class="span6">
-				<h3>
-					<span class="label label-success">Descrição</span>
-				</h3>
-				<p>${promocao.descricao}</p>
-				<p>
-					<span class="label label-primary">Local</span> <span
-						class="label label-info"> ${promocao.localDescription} </span> |
-						
-						 <span class="label label-primary">Cidade</span> <span
-						class="label label-info">${promocao.cidade}</span> |
-						 
-						<span class="label label-primary"> Duração</span> <span
-						class="label label-info">${promocao.diasDuracao} dias </span>
-				</p>
 
-				<p>
-					<span class="label label-warning">Preço</span> <span
-						class="label label-danger">R$ ${promocao.preco} }</span>
-				</p>
-				<p>
-					<!-- 							<a href="#">Read more</a> -->
-				</p>
+		<c:forEach items="${lista}" var="promocao">
+
+
+			<div class="row">
+				<div class="span2">
+					<a href="#" class="thumbnail"> <img
+						src="${promocao.imgDescricao}" alt="Eita isso é constrangedor :()">
+					</a>
+				</div>
+				<div class="span6">
+					<h3>
+						<span class="label label-success">Descrição</span> <span
+							class="label label-info"> ${promocao.descricao}</span>
+					</h3>
+
+					<p>
+						<span class="label label-primary">Local</span> <span
+							class="label label-info"> ${promocao.localDescription} </span> |
+
+						<span class="label label-primary">Cidade</span> <span
+							class="label label-info">${promocao.cidade}</span> | <span
+							class="label label-primary"> Duração</span> <span
+							class="label label-info">${promocao.diasDuracao} dias </span>
+					</p>
+
+					<h3>
+						<span class="label label-warning">Preço</span> <span
+							class="label label-danger">R$ ${promocao.preco}</span>
+					</h3>
+					<p>
+						<!-- 							<a href="#">Read more</a> -->
+					</p>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="span8">
-				<p>
-					 <span
-						class="label label-info">2 dias </span>|
-						 <span
-						class="label label-info">2 dias </span>|
-						 <span
-						class="label label-info">2 dias </span>|
-						 <span
-						class="label label-info">2 dias </span>
-				</p>
-				<p>
-					<i class="icon-user"></i> by <a href="#">Wagner Ap Monteverde</a> | <i
-						class="icon-calendar"></i> Sept 16th, 2012 | <i
-						class="icon-tags"></i> Categoria : <a href="#"><span
-						class="label label-info">${promocao.categoria} }</span></a> <a href="#"><span
-						class="label label-info">Melhor Preço</span></a>
+			<div class="row">
+				<div class="span8">
+					<p>
+						<span class="label label-info">2 dias </span>| <span
+							class="label label-info">2 dias </span>| <span
+							class="label label-info">2 dias </span>| <span
+							class="label label-info">2 dias </span>
+					</p>
+					<p>
+						<i class="icon-user"></i> by <a href="#">Wagner Ap Monteverde</a>
+						| <i class="icon-calendar">Cadastrado em:</i> </i>
+						<fmt:formatDate value="${promocao.dataCadstro.time}"
+							pattern="dd/MM/yyyy" />
+						| <i class="icon-tags"></i> Categoria : <a href="#"><span
+							class="label label-info">${promocao.categoria}</span></a>
+				</div>
 			</div>
-		</div>
-		
-		<hr>
-		
-		
-		
-		
+
+
+			<hr>
+
+
+
+
 		</c:forEach>
-		
-		
-		
 
-<!-- 		<div class="row"> -->
-<!-- 			<div class="span2"> -->
-<!-- 				<a href="#" class="thumbnail"> <img -->
-<%-- 					src="<c:url value='/resources/img/alimentos.png'/>" alt=""> --%>
-<!-- 				</a> -->
-<!-- 			</div> -->
-<!-- 			<div class="span6"> -->
-<!-- 				<h3> -->
-<!-- 					<span class="label label-success">Descrição</span> -->
-<!-- 				</h3> -->
-<!-- 				<p>Lorem ipsun dolores Lorem ipsun dolores Lorem ipsun dolores -->
-<!-- 					Lorem ipsun dolores</p> -->
-<!-- 				<p> -->
-<!-- 					<span class="label label-primary">Local</span> <span -->
-<!-- 						class="label label-info"> Loja do Zé </span> | -->
-						
-<!-- 						 <span class="label label-primary">Cidade</span> <span -->
-<!-- 						class="label label-info"> Barbosa Ferraz</span> | -->
-						 
-<!-- 						<span class="label label-primary"> Duração</span> <span -->
-<!-- 						class="label label-info">2 dias </span> -->
-<!-- 				</p> -->
 
-<!-- 				<p> -->
-<!-- 					<span class="label label-warning">Preço</span> <span -->
-<!-- 						class="label label-danger">R$ 36,90</span> -->
-<!-- 				</p> -->
-<!-- 				<p> -->
-<!-- 												<a href="#">Read more</a> -->
-<!-- 				</p> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 		<div class="row"> -->
-<!-- 			<div class="span8"> -->
-<!-- 				<p> -->
-<!-- 					 <span -->
-<!-- 						class="label label-info">2 dias </span>| -->
-<!-- 						 <span -->
-<!-- 						class="label label-info">2 dias </span>| -->
-<!-- 						 <span -->
-<!-- 						class="label label-info">2 dias </span>| -->
-<!-- 						 <span -->
-<!-- 						class="label label-info">2 dias </span> -->
-<!-- 				</p> -->
-<!-- 				<p> -->
-<!-- 					<i class="icon-user"></i> by <a href="#">Wagner Ap Monteverde</a> | <i -->
-<!-- 						class="icon-calendar"></i> Sept 16th, 2012 | <i -->
-<!-- 						class="icon-tags"></i> Categoria : <a href="#"><span -->
-<!-- 						class="label label-info">Alimentos</span></a> <a href="#"><span -->
-<!-- 						class="label label-info">Melhor Preço</span></a> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-		
-<!-- 		<hr> -->
-		
-		
-		
-			
-			<br><br><br>
-		</div>
-		
+
+		<br> <br> <br>
 	</div>
-	
-	
-	
-	
+
+
 
 	<hr>
 

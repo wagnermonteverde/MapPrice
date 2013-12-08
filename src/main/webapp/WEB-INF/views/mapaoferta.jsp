@@ -11,6 +11,9 @@
 <!-- Bootstrap core CSS -->
 <link href="<c:url value='/resources/css/bootstrap.css'/>"
 	rel="stylesheet">
+<link id="page_favicon"
+	href="<c:url value='/resources/img/favicon.ico'/>" rel="icon"
+	type="image/x-icon" />
 <!-- Add custom CSS here -->
 <link
 	href="<c:url value='/resources/font-awesome/css/font-awesome.min.css'/>"

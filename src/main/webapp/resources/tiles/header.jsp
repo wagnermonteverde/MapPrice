@@ -28,10 +28,11 @@
 					data-toggle="dropdown">${user.name} ${user.sobrenome}<b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li></li>
-						</br>
-						</br>
-						</br>
+						<li><a href="#" id="sair"><img
+						style="width: 100px; height: 100px;" alt="0"
+						src="http://graph.facebook.com/<c:out value="${user.idFacebook}"/>/picture" /></li>
+						
+						
 <!-- 						                <li><a href="#"></a></li> -->
 <!-- 						                <li><a href="#"></a></li> -->
 						                <li class="divider"></li>
