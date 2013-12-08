@@ -1,12 +1,13 @@
 package br.com.price.model;
 
-import java.io.Serializable;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+
+
 
 @Entity
 public class Promocao{
@@ -14,7 +15,7 @@ public class Promocao{
 	/**
 	 * 
 	 * 
-	 * Variaveis em amiusculo devido a bivlioteca Gjon e aplicação
+	 * Variaveis em amiusculo devido a biblioteca Gjon e aplicação
 	 * javascript q precisa de variaveis com iniciais maiusculas :)
 	 * gambi :)
 	 * 
@@ -26,13 +27,16 @@ public class Promocao{
 	@GeneratedValue
 	private long Id;
 
-	private Double Preco;
-
+    @NotNull
+	private String Preco;
+    @NotNull  @Size(min=5)
 	private String Descricao;
 
 	private Integer DiasDuracao;
 
 	private String Imagem;
+	
+	private String imgDescricao;
 
 	private String Hint;
 
@@ -41,12 +45,21 @@ public class Promocao{
 	private String Latitude;
 
 	private String LocalDescription;
+	
+	private String cidade;
+	
+	private String categoria;
 
-	public Double getPreco() {
+	public long getId() {
+		return Id;
+	}
+
+	
+	public String getPreco() {
 		return Preco;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco(String preco) {
 		Preco = preco;
 	}
 
@@ -72,6 +85,14 @@ public class Promocao{
 
 	public void setImagem(String imagem) {
 		Imagem = imagem;
+	}
+
+	public String getImgDescricao() {
+		return imgDescricao;
+	}
+
+	public void setImgDescricao(String imgDescricao) {
+		this.imgDescricao = imgDescricao;
 	}
 
 	public String getHint() {
@@ -106,12 +127,22 @@ public class Promocao{
 		LocalDescription = localDescription;
 	}
 
-	public long getId() {
-		return Id;
+	public String getCidade() {
+		return cidade;
 	}
 
-	
-	
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
 	
 
 }

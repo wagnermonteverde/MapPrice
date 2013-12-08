@@ -43,18 +43,18 @@ $(document).ready(function () {
 					map.setZoom(16);
 				}
 			}
-		})
+		});
 	}
 	
 	$("#btnEndereco").click(function() {
 		if($(this).val() != "")
 			carregarNoMapa($("#txtEndereco").val());
-	})
+	});
 	
 	$("#txtEndereco").blur(function() {
 		if($(this).val() != "")
 			carregarNoMapa($(this).val());
-	})
+	});
 	
 	google.maps.event.addListener(marker, 'drag', function () {
 		geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
@@ -98,7 +98,7 @@ $(document).ready(function () {
 		var latitude = $("#txtLatitude").val();
 		var longitude = $("#txtLongitude").val();
 		
-		alert("Endereço: " + endereco + "\nLatitude: " + latitude + "\nLongitude: " + longitude);
+		//alert("Endereço: " + endereco + "\nLatitude: " + latitude + "\nLongitude: " + longitude);
 	});
 
 });

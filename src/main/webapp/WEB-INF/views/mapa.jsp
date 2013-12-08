@@ -9,8 +9,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="shortcut icon"
-	href="<c:url value='/resources/css/img/favicon.png'/>">
+<link id="page_favicon"
+	href="<c:url value='/resources/img/favicon.ico'/>" rel="icon"
+	type="image/x-icon" />
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:600"
 	type="text/css" rel="stylesheet" />
 <link href="<c:url value='/resources/css/estilomapa.css'/>"
@@ -30,7 +31,7 @@
 <script type="text/javascript"
 	src="  <c:url value='/resources/js/jquery-ui.custom.min.js'/>"></script>
 
-<title>Fixed Top Navbar Example for Bootstrap</title>
+<title>Promoções</title>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value='/resources/css/bootstrap.css'/>"

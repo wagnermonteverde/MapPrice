@@ -9,14 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="shortcut icon"
-	href="<c:url value='/resources/css/img/favicon.png'/>">
+<link id="page_favicon"
+	href="<c:url value='/resources/img/favicon.ico'/>" rel="icon"
+	type="image/x-icon" />
 <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" -->
 <!-- 	type="text/css" rel="stylesheet" /> -->
 
-
-<script type="text/javascript"
-	src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript"
 	src="<c:url value='/resources/js/jquery.min.js'/>"></script>
 <script type="text/javascript"
@@ -26,7 +24,7 @@
 
 
 
-<title>Fixed Top Navbar Example for Bootstrap</title>
+<title>Promoções</title>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value='/resources/css/bootstrap.css'/>"
@@ -54,8 +52,8 @@
 
 <body>
 
-	
-	<c:import url="/resources/tiles/header.jsp"/>
+
+	<c:import url="/resources/tiles/header.jsp" />
 
 
 
@@ -63,49 +61,145 @@
 	<br>
 	<br>
 	<div id="imgpos">
-		
-		<hr>
 
-				<div class="row">
-					<div class="span2">
-						<a href="#" class="thumbnail"> <img
-							src="http://placehold.it/260x180" alt="">
-						</a>
-					</div>
-					<div class="span6">
-						<p>Lorem ipsum dolor sit amet, id nec conceptam
-							conclusionemque. Et eam tation option. Utinam salutatus ex eum.
-							Ne mea dicit tibique facilisi, ea mei omittam explicari
-							conclusionemque, ad nobis propriae quaerendum sea.</p>
-						<p>
-							<a href="#">Read more</a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span8">
-						<p></p>
-						<p>
-							<i class="icon-user"></i> by <a href="#">Mark</a> | <i
-								class="icon-calendar"></i> Sept 16th, 2012 | <i
-								class="icon-comment"></i> <a href="#">3 Comments</a> | <i
-								class="icon-share"></i> <a href="#">39 Shares</a> | <i
-								class="icon-tags"></i> Categoria : <a href="#"><span
-								class="label label-info">Eletronicos</span></a> <a href="#"><span
-								class="label label-info">Bootstrap</span></a> <a href="#"><span
-								class="label label-info">UI</span></a> <a href="#"><span
-								class="label label-info">growth</span></a>
-						</p>
-					</div>
-				</div>
+		<hr>
+		
+		<c:forEach items="${lista}" var="promocao" >
+		
+		
+		<div class="row">
+			<div class="span2">
+				<a href="#" class="thumbnail"> <img
+					src="${promocao.imgDescricao}" alt="Eita isso é constrangedor :()">
+				</a>
 			</div>
+			<div class="span6">
+				<h3>
+					<span class="label label-success">Descrição</span>
+				</h3>
+				<p>${promocao.descricao}</p>
+				<p>
+					<span class="label label-primary">Local</span> <span
+						class="label label-info"> ${promocao.localDescription} </span> |
+						
+						 <span class="label label-primary">Cidade</span> <span
+						class="label label-info">${promocao.cidade}</span> |
+						 
+						<span class="label label-primary"> Duração</span> <span
+						class="label label-info">${promocao.diasDuracao} dias </span>
+				</p>
+
+				<p>
+					<span class="label label-warning">Preço</span> <span
+						class="label label-danger">R$ ${promocao.preco} }</span>
+				</p>
+				<p>
+					<!-- 							<a href="#">Read more</a> -->
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span8">
+				<p>
+					 <span
+						class="label label-info">2 dias </span>|
+						 <span
+						class="label label-info">2 dias </span>|
+						 <span
+						class="label label-info">2 dias </span>|
+						 <span
+						class="label label-info">2 dias </span>
+				</p>
+				<p>
+					<i class="icon-user"></i> by <a href="#">Wagner Ap Monteverde</a> | <i
+						class="icon-calendar"></i> Sept 16th, 2012 | <i
+						class="icon-tags"></i> Categoria : <a href="#"><span
+						class="label label-info">${promocao.categoria} }</span></a> <a href="#"><span
+						class="label label-info">Melhor Preço</span></a>
+			</div>
+		</div>
 		
 		<hr>
+		
+		
+		
+		
+		</c:forEach>
+		
+		
+		
 
+<!-- 		<div class="row"> -->
+<!-- 			<div class="span2"> -->
+<!-- 				<a href="#" class="thumbnail"> <img -->
+<%-- 					src="<c:url value='/resources/img/alimentos.png'/>" alt=""> --%>
+<!-- 				</a> -->
+<!-- 			</div> -->
+<!-- 			<div class="span6"> -->
+<!-- 				<h3> -->
+<!-- 					<span class="label label-success">Descrição</span> -->
+<!-- 				</h3> -->
+<!-- 				<p>Lorem ipsun dolores Lorem ipsun dolores Lorem ipsun dolores -->
+<!-- 					Lorem ipsun dolores</p> -->
+<!-- 				<p> -->
+<!-- 					<span class="label label-primary">Local</span> <span -->
+<!-- 						class="label label-info"> Loja do Zé </span> | -->
+						
+<!-- 						 <span class="label label-primary">Cidade</span> <span -->
+<!-- 						class="label label-info"> Barbosa Ferraz</span> | -->
+						 
+<!-- 						<span class="label label-primary"> Duração</span> <span -->
+<!-- 						class="label label-info">2 dias </span> -->
+<!-- 				</p> -->
 
-
-	<c:import url="/resources/tiles/footer.jsp"/>
-
+<!-- 				<p> -->
+<!-- 					<span class="label label-warning">Preço</span> <span -->
+<!-- 						class="label label-danger">R$ 36,90</span> -->
+<!-- 				</p> -->
+<!-- 				<p> -->
+<!-- 												<a href="#">Read more</a> -->
+<!-- 				</p> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="span8"> -->
+<!-- 				<p> -->
+<!-- 					 <span -->
+<!-- 						class="label label-info">2 dias </span>| -->
+<!-- 						 <span -->
+<!-- 						class="label label-info">2 dias </span>| -->
+<!-- 						 <span -->
+<!-- 						class="label label-info">2 dias </span>| -->
+<!-- 						 <span -->
+<!-- 						class="label label-info">2 dias </span> -->
+<!-- 				</p> -->
+<!-- 				<p> -->
+<!-- 					<i class="icon-user"></i> by <a href="#">Wagner Ap Monteverde</a> | <i -->
+<!-- 						class="icon-calendar"></i> Sept 16th, 2012 | <i -->
+<!-- 						class="icon-tags"></i> Categoria : <a href="#"><span -->
+<!-- 						class="label label-info">Alimentos</span></a> <a href="#"><span -->
+<!-- 						class="label label-info">Melhor Preço</span></a> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		
+<!-- 		<hr> -->
+		
+		
+		
+			
+			<br><br><br>
+		</div>
+		
+	</div>
 	
+	
+	
+	
+
+	<hr>
+
+	<c:import url="/resources/tiles/footer.jsp" />
+
+
 </body>
 </html>

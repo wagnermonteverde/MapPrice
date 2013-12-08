@@ -13,10 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.price.logic.UserOperations;
 
-
-
-
-
 @Controller
 public class ControlerLink {
 
@@ -25,19 +21,24 @@ public class ControlerLink {
 		return "mapa";
 	}
 
+	@RequestMapping("/mapaoferta")
+	public String mapaoferta() {
+		return "mapaoferta";
+	}
+
 	@RequestMapping("/login")
 	public String mapa(@RequestParam("token") String token, HttpSession session) {
 		UserOperations userOperations = new UserOperations();
-		
-		userOperations.loginUser(token);
-		
-		
-		return "redirect:unico";
+		session.setAttribute("user",userOperations.loginUser(token));
+//		System.err.println(userOperations.loginUser(token).getId());
+		return "redirect:timeline";
 	}
 
-	@RequestMapping("/unico")
-	public String exibe() {
-		return "exibe";
+	
+	
+	@RequestMapping("/logof")
+	public String logout() {
+		return "redirect:/";
 	}
 
 }

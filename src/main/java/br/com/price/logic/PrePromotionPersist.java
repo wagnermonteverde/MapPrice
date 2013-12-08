@@ -10,6 +10,9 @@ public class PrePromotionPersist {
 	private static final String ALIMENTOS = "/price/resources/img/mapicons/food.png";
 	private static final String ELETRONICOS = "/price/resources/img/mapicons/phones.png";
 	private static final String VESTUARIO = "/price/resources/img/mapicons/vest.png";
+	private static final String ALIMENTOSTIMELINE = "/price/resources/img/alimentos.png";
+	private static final String ELETRONICOSTIMELINE= "/price/resources/img/eletronics.png";
+	private static final String VESTUARIOTIMELINE = "/price/resources/img/vestuario.png";
 	private static final String HINT_ALIMENTOS ="Alimentos em Promocao";
 	private static final String HINT_ELETRONICOS ="Eletronicos em Promocao";
 	private static final String HINT_VESTUARIO ="Vestuario em Promocao";
@@ -27,16 +30,22 @@ public class PrePromotionPersist {
 
 			promocao.setImagem(ALIMENTOS);
 			promocao.setHint(HINT_ALIMENTOS);
+			promocao.setImgDescricao(ALIMENTOSTIMELINE);
+			promocao.setCategoria("Alimentos");
 
 		} else if (promocao.getImagem().equals("2")) {
 
 			promocao.setImagem(VESTUARIO);
 			promocao.setHint(HINT_VESTUARIO);
+			promocao.setImgDescricao(VESTUARIOTIMELINE);
+			promocao.setCategoria("Vestuario");
 
 		} else if (promocao.getImagem().equals("3")) {
 
 			promocao.setImagem(ELETRONICOS);
 			promocao.setHint(HINT_ELETRONICOS);
+			promocao.setImgDescricao(ELETRONICOSTIMELINE);
+			promocao.setCategoria("Eletronicos");
 
 		}
 

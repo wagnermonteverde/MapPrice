@@ -10,9 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<link id="page_favicon"
-	href="<c:url value='/resources/img/favicon.ico'/>" rel="icon"
-	type="image/x-icon" />
+<link rel="shortcut icon"
+	href="<c:url value='/resources/css/img/favicon.png'/>">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:600"
 	type="text/css" rel="stylesheet" />
 
@@ -64,8 +63,7 @@
 	<br>
 	<br>
 	<div id="imgpos">
-		<form class="form-horizontal" method="POST" action="cadastrapreco">
-		<form:errors path="*" cssClass="errorblock" element="div" />
+		<form:form method="POST" class="form-horizontal" commandName="promocao" action="cadastrapreco">
 			<div class="form-group">
 				<fieldset>
 
@@ -76,12 +74,10 @@
 					<div class="control-group">
 						<label class="control-label" for="textinput">Descrição</label>
 						<div class="controls">
-							<input id="textinput" name="Descricao" type="text"
-								placeholder="Descrição" class="form-control">
-								<span class="label label-danger">${errdescricao}</span>
-				
+							<form:input path="Descricao"  id="textinput"  placeholder="Descrição" class="form-control" />
+							<form:errors path="Descricao" />
+
 						</div>
-							
 					</div>
 
 					<!-- Text input-->
@@ -92,7 +88,6 @@
 							<input id="textinput" name="LocalDescription" type="text"
 								placeholder="Local/Estabelecimento do Melhor Preço"
 								class="form-control">
-								<span class="label label-danger">${errlocal}</span>
 
 						</div>
 					</div>
@@ -106,7 +101,11 @@
 							<select id="selectbasic" name="DiasDuracao" class="form-control">
 								<option value="1">Um Dia</option>
 								<option value="2">Dois Dias</option>
-								</select>
+								<option value="3">Três Dias</option>
+								<option value="4">Quatro Dias</option>
+								<option value="5">Cinco Dias</option>
+								<option value="6">Seis Dias</option>
+							</select>
 						</div>
 					</div>
 
@@ -128,20 +127,18 @@
 						<label class="control-label" for="Preco">Preço</label>
 						<div class="controls">
 							<input id="textinput" name="Preco" type="text"
-								placeholder="30,00" class="form-control">
-								<span class="label label-danger">${errpreco}</span>
-								
+								placeholder="Melhor Preço" class="form-control">
 
 						</div>
 					</div>
 
 					<!-- Button (Double) -->
 					<div class="control-group">
-<!-- 						<label class="control-label" for="button1id">Double Button</label> -->
+						<label class="control-label" for="button1id">Double Button</label>
 						<div class="controls">
 							<button id="button1id" name="button1id" class="btn btn-success">Cadastrar
 								Melhor Preço</button>
-							<a id="button2id" href="unico" name="button2id" class="btn btn-danger">Cancelar</a>
+							<button id="button2id" name="button2id" class="btn btn-danger">Cancelar</button>
 						</div>
 					</div>
 
@@ -152,7 +149,7 @@
 
 				</fieldset>
 			</div>
-		</form>
+		</form:form>
 	</div>
 
 

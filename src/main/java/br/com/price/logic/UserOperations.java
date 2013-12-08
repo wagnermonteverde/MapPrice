@@ -35,14 +35,14 @@ public class UserOperations {
 	public User loginUser(String token) {
 
 		User userface = populaUser(token);
+		User userbd = isRegistered(userface);
 
-		if (isRegistered(userface) != null) {
+		if (userbd != null) {
 
-			if (verificaAlteracaoPerfil(userface)) {
-				return updateUser(userface);
-			} else {
-				return userface;
-			}
+			userbd.setName(userface.getName());
+			userbd.setSobrenome(userface.getSobrenome());
+
+			return userbd;
 
 		} else {
 
@@ -77,7 +77,7 @@ public class UserOperations {
 	 * 
 	 * Verifica alteração no perfil do facebook
 	 */
-	private  boolean verificaAlteracaoPerfil(User user) {
+	private boolean verificaAlteracaoPerfil(User user) {
 
 		if (!userBd.getName().equals(user.getName())) {
 			return true;
@@ -95,7 +95,7 @@ public class UserOperations {
 	 * Verifica se usuario é cadastrado
 	 */
 
-	private  User isRegistered(User user) {
+	private User isRegistered(User user) {
 		DAOUser dao = new DAOUser(User.class);
 		userBd = dao.consultaEmail(user.getEmail());
 		return userBd;
@@ -105,7 +105,7 @@ public class UserOperations {
 	 * 
 	 * Popula Objeto User com os dados do perfil do facebook
 	 */
-	private  User populaUser(String token) {
+	private User populaUser(String token) {
 
 		Facebook facebook = new FacebookTemplate(token);
 		FacebookProfile profile = facebook.userOperations().getUserProfile();

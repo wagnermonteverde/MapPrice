@@ -23,7 +23,7 @@ public class TesteConfigure {
 		
 		User user = new User();
 		
-		user.setEmail("wagnermonteverde@hotmail.com");
+		user.setEmail("wagnermonte@hotmail.com");
 		user.setName("wagner");
 		
 		daoUser.adiciona(user);
@@ -37,40 +37,46 @@ public class TesteConfigure {
 		promocao.setDescricao("Promocao da boa pode comprar que e bao");
 		promocao.setDiasDuracao(2);
 		promocao.setHint("Promocao Alimentos Confira");
-		promocao.setImagem("/price/resources/img/mapicons/vest.png");
-		promocao.setPreco(200.00);
+		promocao.setImagem("/price/resources/img/mapicons/food.png");
+		promocao.setImgDescricao("/price/resources/img/alimentos.png");
+		promocao.setPreco("200.00");
         promocao.setLatitude("-24.0273973447393");
         promocao.setLongitude("-52.01225890527951");
         promocao.setLocalDescription("Vianet Informatica");
+        promocao.setCategoria("Alimentos");
         
         
         Promocao promocao1 = new Promocao();
 		promocao1.setDescricao("Promocao da boa pode comprar que e bao");
 		promocao1.setDiasDuracao(2);
-		promocao1.setHint("Promocao Alimentos Confira");
-		promocao1.setImagem("/price/resources/img/mapicons/phones.png");
-		promocao1.setPreco(200.00);
+		promocao1.setHint("Promocao Vestuario Confira");
+		promocao1.setImagem("/price/resources/img/mapicons/vest.png");
+		promocao1.setPreco("200.00");
+		promocao1.setImgDescricao("/price/resources/img/vestuario.png");
 		promocao1.setLatitude("-24.027607300303135");
 		promocao1.setLongitude("-52.010970355169661");
 		promocao1.setLocalDescription("Vianet Informatica");
+		promocao1.setCategoria("Eletronicos");
  
         
         Promocao promocao2 = new Promocao();
 		promocao2.setDescricao("Promocao da boa pode comprar que e bao");
 		promocao2.setDiasDuracao(2);
-		promocao2.setHint("Promocao Alimentos Confira");
-		promocao2.setImagem("/price/resources/img/mapicons/food.png");
-		promocao2.setPreco(200.00);
+		promocao2.setHint("Promocao Eletronicos Confira");
+		promocao2.setImagem("/price/resources/img/mapicons/phones.png");
+		promocao2.setImgDescricao("/price/resources/img/eletronics.png");
+		promocao2.setPreco("200.00");
         promocao2.setLatitude("-24.0224136322735");
         promocao2.setLongitude("-52.00180792917479");
         promocao2.setLocalDescription("Vianet Informatica");
+        promocao2.setCategoria("Vestuario");
 
         
         dao.adiciona(promocao);
         dao.adiciona(promocao1);
         dao.adiciona(promocao2);
         
-        Gson gson = new Gson();
+//        Gson gson = new Gson();
         
         List<Promocao> listaPromocao = new ArrayList<Promocao>();
         
@@ -78,7 +84,7 @@ public class TesteConfigure {
         listaPromocao.add(promocao1);
         listaPromocao.add(promocao2);
         
-        System.out.println(gson.toJson(listaPromocao));
+//        System.out.println(gson.toJson(lisCtaPromocao));
 		
 		
 	}
