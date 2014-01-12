@@ -40,5 +40,12 @@ public class ControlerLink {
 	public String logout() {
 		return "redirect:/";
 	}
+	
+	
+	@RequestMapping("/votacao")
+	public String votos() {
+		return "votos";
+	}
+
 
 }
